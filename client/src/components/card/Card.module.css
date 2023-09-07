@@ -1,0 +1,42 @@
+.cardinfocontainer{
+    background-color: #111111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    border: solid 1px #f7fbfc;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius:25px;
+    -o-border-radius: 25px;
+    margin: 10px;
+}
+
+/* PARA QUE AL HACER HOVER SE ELEVEN UN POCO CON MENOS OPACIDAD*/
+.cardinfocontainer:hover {
+    opacity: 0.5;
+    transform: translateY(-10px);
+    object-fit: cover;
+    transition: 0.3s
+}
+
+.imgcontainer img {
+    width: 10rem;
+    height: 8rem;
+    object-fit: cover;
+}
+.imgcontainer h5 {
+    text-align: center;
+}
+
+.linktodetail {
+    text-decoration: none;
+    color: white;
+}
+.linktodetail:hover {
+    text-decoration: none;
+    color: rgb(21, 220, 21);
+}
+

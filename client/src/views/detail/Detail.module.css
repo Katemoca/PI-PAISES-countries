@@ -1,0 +1,112 @@
+body {
+  margin: 0; /* Eliminar márgenes predeterminados */
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.detailcontainer {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../assets/backgrounds/fondo2.jpg");
+  object-fit: cover;
+  background-size: cover;
+  background-size: 100% 100%; 
+  background-position: center top -20px;
+  font-family: 'Barlow Semi Condensed', serif;
+  margin: 0
+}
+
+.detailcontainerlink {
+  display: flex;
+  background-color: rgba(113, 207, 113, 0.963);
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Barlow Semi Condensed', serif;
+  padding-bottom: 12px;
+}
+
+.detailcontainerlink button {
+  margin: 0;
+  border-color: rgba(113, 207, 113, 0.963);
+}
+
+/* Aplicar estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .detailcontainer {
+    background-image: url("../../assets/backgrounds/fondo2.jpg");
+    object-fit: cover;
+    background-size: cover;
+    background-position: center top -20px;
+  }
+  .detailcontainerlink {
+    width: 100%;
+  }
+
+  .detailcontainerlink button {
+    /* Ajusta el margen de los botones para separarlos verticalmente */
+    margin-top: 10px;
+  }
+}
+
+.LinkNavBar {
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Barlow Semi Condensed', serif;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 120px;
+  background-size: 100% 100%; 
+  margin: 0;
+  padding: 70;
+}
+
+.container h2 {
+  text-align: center;
+  color: white;
+  white-space: normal;
+  padding: 0;
+}
+
+.flagsimg {
+  height: 10rem;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 20;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+
+.details  {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+  background-color:rgba(113, 207, 113, 0.379);
+  backdrop-filter: blur(15px); 
+  border-radius: 2rem;
+}
+.details p {
+  color: whitesmoke;
+}
+.details button {
+  width: 120%;
+  border-color:rgba(113, 207, 113, 0.963);
+}

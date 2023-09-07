@@ -1,0 +1,36 @@
+.homecontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    font-family: 'Barlow Semi Condensed', serif;
+}
+.homecontainer button option{
+    
+    font-family: 'Barlow Semi Condensed', serif;
+}
+
+.textintro {
+    font-weight: bolder;
+    width: 28rem;
+    text-align: center;
+}
+
+.homepaginate {
+    display: flex;
+    margin-top: 2rem;
+    font-family: 'Barlow Semi Condensed', serif;
+    
+}
+
+
+.nextpage{
+    width: 6rem;
+    height: 2rem;
+}
+.prevpage {
+    width: 6rem;
+    height: 2rem;
+}
+

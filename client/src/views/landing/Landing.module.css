@@ -1,0 +1,163 @@
+.landingcont{
+    background-image: url("../../assets/backgrounds/fondo1.jpg");
+    background-size: cover;
+    background-position: center top -400px;
+    object-fit: cover;
+    position: relative;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+@media screen and (max-width: 768px){ 
+    .landingcont {
+      justify-content: center;
+        
+    }
+    .landing {
+        background-image: url("../../assets/backgrounds/fondo1.jpg");
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-position: center top -20px;
+        object-fit: cover;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        max-width: 300px;
+        padding-top: 2%;
+        padding-bottom: 2%; 
+        margin: 1%;
+        overflow: hidden;
+      }
+
+    .landingcont button {
+        padding: 10px 20px;
+        border-radius: 100px;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        cursor: pointer;
+      }
+
+      .presentationcont p {
+        color: white;
+        padding: 5% 20%;
+      }
+
+      .blurbackground{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color:rgba(113, 207, 113, 0.34);
+        backdrop-filter: blur(15px); 
+        border-radius: 2rem;
+        width: 15rem;
+        height: 20rem;
+    
+    }
+
+}
+
+/* FONDO CIRCULAR DEL DIV*/
+.landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    text-align: center;
+    background-image: url("../../assets/backgrounds/fondo1.jpg");
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center top -20px;
+    object-fit: cover;
+}
+  
+.landingcont button {
+    padding: 10px 20px;
+    margin-top: 2rem;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+  
+.btn:hover {
+    color: rgb(113, 207, 113);
+}
+
+.presentationcont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    height: 100px;
+    width: 400px;
+    margin-bottom: 30px;
+    padding-top: 0 0;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    
+}
+
+
+.paragraph  {
+    color: rgb(252, 246, 246);
+    padding: 3%;
+    margin: 2px;
+    text-align: center;
+    font-size: 1rem;
+}
+.welcome {
+    background-image: linear-gradient(to right, #83d390, rgb(172, 227, 186));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+    display: inline-block;
+    mask-image: linear-gradient(to right, #3fb56c, rgb(234, 234, 245));
+    mask-repeat: no-repeat;
+    -webkit-mask-image: linear-gradient(to right,  #59cc4f, rgb(234, 234, 245));
+    -webkit-mask-repeat: no-repeat;
+}
+
+.blurbackground{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(113, 207, 113, 0.34);
+    backdrop-filter: blur(15px); 
+    border-radius: 2rem;
+    height: 30rem;
+
+}
+
+.socialMediacontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo1 img {
+
+    object-fit: cover;
+    max-width: 6vh;
+}
+
+
+

@@ -1,0 +1,56 @@
+.formcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Barlow Semi Condensed', serif;
+    background-image: url("../../assets/backgrounds/tourglobe.gif");
+    background-size: 100% 100%; /* Cover the entire div */
+    object-fit: cover;
+    position: relative;
+    height: 100vh;
+  }
+  
+
+.form{
+    background-color: aqua;
+    width: 300px;
+    border-radius: 20px;
+    margin: 10px;
+}
+.forminput {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+.forminput option {
+    font-family: 'Barlow Semi Condensed', serif;
+}
+
+.forminput label {
+    text-align: center;
+    margin: 12px
+}
+
+.buttonsubmit button{
+    display: flex;
+    grid: 100px;
+    margin: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    size: 15px;
+    font-family: 'Barlow Semi Condensed', serif;
+}
+
+.forminput p {
+    text-align: center;
+    font-size: small;
+    color: red; 
+    font-family: 'Barlow Semi Condensed', serif;
+  }
+
+  .countrychosendiv button {
+    margin: 2%;
+  }
+  
+
