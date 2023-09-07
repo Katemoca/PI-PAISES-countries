@@ -37,13 +37,13 @@ const getActivityByIdHandler = async (req, res) => {
 //! Nueva actividad creada
 const createActivitiesHandler = async (req, res) => {
   try {
-    const { name, difficulty, duration, season, countryId } = req.body;
+    const { name, difficulty, duration, season, countries } = req.body;
     const response = await createActivity(
       name,
       difficulty,
       duration,
       season,
-      countryId
+      countries
     );
     console.log("The user was created");
     return res.status(201).json(response);
@@ -56,14 +56,14 @@ const createActivitiesHandler = async (req, res) => {
 const updateActivitiesHandler = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, difficulty, duration, season, countryId } = req.body;
+    const { name, difficulty, duration, season, countries } = req.body;
     const updateActivity = await updateActivities(
       id,
       name,
       difficulty,
       duration,
       season,
-      countryId
+      countries
     );
     return res.status(200).json(updateActivity);
   } catch (error) {

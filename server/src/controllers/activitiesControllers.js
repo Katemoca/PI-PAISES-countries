@@ -66,7 +66,7 @@ const createActivity = async (
   difficulty,
   duration,
   season,
-  countryId
+  countries
 ) => {
   const newActivity = await Activity.create({
     name,
@@ -74,7 +74,7 @@ const createActivity = async (
     duration,
     season,
   });
-  await newActivity.setCountries(countryId);
+  await newActivity.setCountries(countries);
   return newActivity;
 };
 
@@ -85,7 +85,7 @@ const updateActivities = async (
   difficulty,
   duration,
   season,
-  countryId
+  countries
 ) => {
   // Buscamos si la actividad existe
   const updatedActivity = await Activity.findByPk(id);
@@ -99,7 +99,7 @@ const updateActivities = async (
     difficulty,
     duration,
     season,
-    countryId,
+    countries,
   });
   return updatedActivity;
 };

@@ -1,6 +1,6 @@
 const axios = require("axios");
 const { Country } = require("../src/db");
-const { cleanedCountryName } = require("./dbValidations");
+// const { cleanedCountryName } = require("./dbValidations");
 
 const apiUrl = "http://localhost:5000/countries";
 

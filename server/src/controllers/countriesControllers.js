@@ -8,7 +8,7 @@ const getAllCountries = async () => {
     include: {
       model: Activity,
       as: "activities", // usamos un alias para la propiedad que incluye las actividades del modelo Activity
-      attributes: ["name", "difficulty", "duration", "season"],
+      attributes: ["id", "name", "difficulty", "duration", "season"],
       through: { attributes: [] }, // excluir los atributos de la tabla intermedia en la respuesta
     },
   });
@@ -51,7 +51,7 @@ const getCountryById = async (id) => {
       include: {
         model: Activity,
         as: "activities",
-        attributes: ["name", "difficulty", "duration", "season"],
+        attributes: ["id", "name", "difficulty", "duration", "season"],
         through: { attributes: [] },
       },
     });
