@@ -57,6 +57,9 @@ export default function Detail() {
               <strong>AREA:</strong> {detailCountry.area} m²
             </p>
             <p>
+              <strong>CONTINENT:</strong> {detailCountry.continents}
+            </p>
+            <p>
               <strong>SUBREGION:</strong> {detailCountry.subregion}
             </p>
             <div>

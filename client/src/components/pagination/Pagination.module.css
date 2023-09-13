@@ -1,0 +1,65 @@
+.all_pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center ;
+}
+
+.cont_pages{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    max-width: fit-content;
+    height: 2em;
+    text-align: center;
+    vertical-align: middle;
+    background: black;
+    border-radius:.3em;
+    border:2px solid white;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:12px;
+    text-shadow:0px 1px 0px;
+    margin-right: .3em;
+    margin-top: .2em;
+  }
+
+.button_not_current{
+    width: 2.8em;
+    height: 2em;
+    text-align: center;
+    vertical-align: middle;
+    background: black;
+    border-radius:.3em;
+    border:2px solid white;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:12px;
+    text-shadow:0px 1px 0px;
+    margin-top: .2em
+  }
+  .button:hover {
+      background:linear-gradient(to bottom, #f2efe7 5%, #0bca67b5 100%);
+  }
+  .button:active {
+    outline: none;
+    background-color: #1c1b18;
+    position:relative;
+    top:1px;
+  }
+  .button:focus {
+    opacity: 0.9;
+    background-color: #333029;
+    color: white
+  }
+  .button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed; /* Establece la opacidad deseada cuando el botón está deshabilitado */
+    }
+

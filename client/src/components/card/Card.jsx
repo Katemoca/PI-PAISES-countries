@@ -5,7 +5,7 @@ import styles from "./Card.module.css";
 function Card({ id, name, flags, continents }) {
   return (
     <div>
-      <Link className={styles.linktodetail} to={`/countries/${id}`}>
+      <Link className={styles.linktodetail} to={`/detail/${id}`}>
         <div className={styles.cardinfocontainer}>
           <div className={styles.namecontainer}>
             <h5>{name}</h5>
