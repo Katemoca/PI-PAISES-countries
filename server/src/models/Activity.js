@@ -18,8 +18,8 @@ module.exports = (sequelize) => {
             msg: "Please enter your name",
           },
           len: {
-            args: [4, 30],
-            msg: "The name must be between 4 and 30 characters",
+            args: [2, 30],
+            msg: "The name must be between 2 and 30 characters",
           },
         },
       },

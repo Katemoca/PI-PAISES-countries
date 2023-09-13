@@ -60,7 +60,26 @@ const getActivityById = async (id) => {
   }
 };
 
-//! Creamos las actividades y tenemos en cuenta la relación con los paises (utilizamos el método set())
+// //! Creamos las actividades y tenemos en cuenta la relación con los paises (utilizamos el método set())
+// const createActivity = async (
+//   name,
+//   difficulty,
+//   duration,
+//   season,
+//   countries
+// ) => {
+//   const newActivity = await Activity.create({
+//     name,
+//     difficulty,
+//     duration,
+//     season,
+//   });
+//   await newActivity.setCountries(countries);
+//   return newActivity;
+// };
+
+//! Creamos las actividades y usamos .findOrCreate para verificar si ya existe la actividad
+
 const createActivity = async (
   name,
   difficulty,
@@ -68,13 +87,34 @@ const createActivity = async (
   season,
   countries
 ) => {
-  const newActivity = await Activity.create({
-    name,
-    difficulty,
-    duration,
-    season,
+  console.log("countries", countries);
+  const [newActivity, created] = await Activity.findOrCreate({
+    where: { name: name },
+    defaults: {
+      name,
+      difficulty,
+      duration,
+      season,
+    },
   });
-  await newActivity.setCountries(countries);
+
+  if (!created) {
+    throw Error("This activity already exists");
+  }
+
+  let addCountriesPromises = countries.map(async (countryFound) => {
+    const country = await Country.findOne({
+      where: { name: countryFound },
+    });
+
+    console.log("Found country", country);
+
+    if (country) {
+      await newActivity.addCountry(country);
+    }
+  });
+
+  await Promise.all(addCountriesPromises);
   return newActivity;
 };
 
