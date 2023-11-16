@@ -1,16 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import NavBar from "../../components/navBar/NavBar";
 import CardsContainer from "../../components/cardsContainer/CardsContainer";
 import Pagination from "../../components/pagination/Pagination";
+import Filters from "../../components/filters/Filters";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getAllCountries } from "../../redux/actions/actions";
+import { getAllActivities, getAllCountries } from "../../redux/actions/actions";
 
 import styles from "./Home.module.css";
 
 export default function Home() {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.countries);
+
+  //! UseEffects (ciclos de vida del componente)
+  useEffect(() => {
+    dispatch(getAllCountries());
+    dispatch(getAllActivities());
+  }, []);
 
   //! PAGINADO LOCAL: Estados locales para saber cuál es la página en la que nos encontramos
   let cardsPerPage = 10;
@@ -25,19 +33,13 @@ export default function Home() {
   const currentCountries = countries.slice(startIndex, endIndex);
 
   //HANDLERS PARA MANEJAR EVENTOS Y MOVERNOS ENTRE B0TONES DEL PAGINADO
-
   const handlePage = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  //! UseEffects (ciclos de vida del componente)
-  useEffect(() => {
-    dispatch(getAllCountries());
-  }, [dispatch]);
-
   return (
     <div>
-      <NavBar />
+      <NavBar page={handlePage} countries={countries.length} />
 
       <div className={styles.homecontainer}>
         <Pagination
@@ -47,6 +49,9 @@ export default function Home() {
         />
         <div className={styles.textintro}>
           <p>{`Let's take a global tour to explore various countries and the immense possibilities for having fun. 🌎✈️ `}</p>
+        </div>
+        <div>
+          <Filters page={handlePage} />
         </div>
         <div>
           <CardsContainer countries={currentCountries} />

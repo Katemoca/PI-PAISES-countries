@@ -1,20 +1,23 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getCountryDetail } from "../../redux/actions/actions";
+import { cleanDetail, getCountryDetail } from "../../redux/actions/actions";
 
 import styles from "./Detail.module.css";
 import loading from "../../assets/loading/greenshape.gif";
 
 export default function Detail() {
-  const { id } = useParams();
-  const detailCountry = useSelector((state) => state.detailCountries);
+  const { detailId } = useParams();
   const dispatch = useDispatch();
+  const detailCountry = useSelector((state) => state.detailCountries);
 
   useEffect(() => {
-    dispatch(getCountryDetail(id));
-  }, [dispatch, id]);
+    dispatch(getCountryDetail(detailId));
+    return () => {
+      dispatch(cleanDetail());
+    };
+  }, [detailId]);
 
   return (
     <div className={styles.detailcontainer}>
@@ -30,7 +33,6 @@ export default function Detail() {
           </Link>
         </button>
       </div>
-      {console.log(detailCountry)}
 
       {detailCountry.name ? (
         <div className={styles.container}>
@@ -64,19 +66,26 @@ export default function Detail() {
             </p>
             <div>
               {detailCountry.activities.length ? (
-                <p>
+                <li>
                   <strong>ACTIVITIES:</strong>
                   {detailCountry.activities.map((activity, index) => {
+                    const actName = activity.name;
                     return (
                       <>
-                        <React.Fragment key={activity.id}>
-                          <p>{activity.name}</p>
-                          {index < detailCountry.activities.length - 1 && " "}
-                        </React.Fragment>
+                        <Link
+                          className={styles.link}
+                          key={activity.name}
+                          to={{
+                            pathname: `/activities/${actName}`,
+                            search: `?detailId=${detailId}`,
+                          }}>
+                          {activity.name}
+                        </Link>
+                        {index < detailCountry.activities.length - 1 && " "}
                       </>
                     );
                   })}
-                </p>
+                </li>
               ) : (
                 <>{`No activities at the moment`}</>
               )}

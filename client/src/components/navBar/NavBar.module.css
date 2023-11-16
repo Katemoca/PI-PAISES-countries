@@ -27,6 +27,7 @@
 }
 
 .searchBar {
+    display: flex;
     text-align: center;
     margin-bottom: 2rem;
     font-family: 'Barlow Semi Condensed', serif;
@@ -37,9 +38,7 @@
     width: 18rem;
 
 }
-.searchButton{
-    margin: 2px;
-}
+
 
 .Link {
     text-decoration: none;
@@ -53,6 +52,7 @@
 .Link:hover {
     color: rgb(116, 220, 116)
 }
+
 
 
 

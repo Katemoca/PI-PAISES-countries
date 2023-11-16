@@ -9,9 +9,15 @@ import {
   CLEAN_DETAIL,
   DELETE_ACTIVIY,
   PUT_ACTIVITY,
+  SEARCH_COUNTRY_BY_NAME,
+  RELOAD_FILTERS,
+  FILTER_BY_CONTINENT,
+  FILTER_BY_ACTIVITY,
+  SORT_BY_ORDER_ABC,
+  SORT_BY_POPULATION,
 } from "../action types/actionTypes.js";
 
-//---------------------------------------------- COUNTRIES------------------------------------------------------
+//************ COUNTRIES *****************************************/
 
 //! Action para obtener todos los paises
 
@@ -24,7 +30,7 @@ export const getAllCountries = () => {
         payload: response.data,
       });
     } catch (error) {
-      console.log(error.response.data);
+      console.log(error.response.data.error);
     }
   };
 };
@@ -41,8 +47,7 @@ export const getCountryDetail = (id) => {
         payload: response.data,
       });
     } catch (error) {
-      console.log(error);
-      alert(error.response.data.error);
+      console.log(error.response.data.error);
     }
   };
 };
@@ -57,7 +62,24 @@ export const cleanDetail = () => {
   };
 };
 
-//---------------------------------------------- ACTIVITIES ------------------------------------------------------
+//! Action para hacer el search por query
+
+export const searchCountryByName = (name) => {
+  return async function (dispatch) {
+    const URL = `http://localhost:3001/countries?name=${name}`;
+    try {
+      const response = await axios.get(URL);
+      dispatch({
+        type: SEARCH_COUNTRY_BY_NAME,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error.response.data.error);
+    }
+  };
+};
+
+//************ ACTIVITIES *****************************************/
 
 //! Action creator para crear actividades
 
@@ -108,6 +130,7 @@ export const deleteActivity = (id) => {
 };
 
 //! Action para actualizar una actividad
+
 export const putActivity = (payload) => {
   return async function (dispatch) {
     const activity = {
@@ -127,5 +150,46 @@ export const putActivity = (payload) => {
     } catch (error) {
       console.log(error.response.data.error);
     }
+  };
+};
+
+//************ FILTERS *****************************************/
+
+export const filterByContinent = (payload) => {
+  return {
+    type: FILTER_BY_CONTINENT,
+    payload,
+  };
+};
+
+export const filterByActivity = (payload) => {
+  return {
+    type: FILTER_BY_ACTIVITY,
+    payload,
+  };
+};
+
+//************ SORTING COUNTRIES ***************************************/
+
+export const sortByOrderAbc = (payload) => {
+  return {
+    type: SORT_BY_ORDER_ABC,
+    payload,
+  };
+};
+
+export const sortByPopulation = (payload) => {
+  return {
+    type: SORT_BY_POPULATION,
+    payload,
+  };
+};
+
+//************ RELOAD FILTERS *****************************************/
+export const reloadFilters = () => {
+  return function (dispatch) {
+    dispatch({
+      type: RELOAD_FILTERS,
+    });
   };
 };

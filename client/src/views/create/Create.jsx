@@ -10,7 +10,6 @@ import {
   putActivity,
 } from "../../redux/actions/actions";
 import NavBar from "../../components/navBar/NavBar";
-
 import styles from "./Create.module.css";
 
 export default function Create() {
@@ -247,12 +246,12 @@ export default function Create() {
           </div>
 
           <div className={styles.countryList}>
-            {form.countries.map((country) => {
+            {form.countries.map((country, index) => {
               return (
                 <div className={styles.countries} key={country.id}>
                   <p key={country.id}>{country}</p>
                   <button
-                    key={country.id}
+                    key={country.index}
                     className={styles.delete}
                     onClick={() => handleDelete(country)}>
                     X
